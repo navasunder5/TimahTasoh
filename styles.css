@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Inter:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: #e6f1ff;
+    background: radial-gradient(circle at top, #0a0f2c, #050816 60%, #02030a);
+    overflow-x: hidden;
+}
+
+/* animated glow background */
+body::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 20% 20%, rgba(0,255,255,0.15), transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(255,0,255,0.12), transparent 40%);
+    z-index: -1;
+    animation: floatGlow 10s infinite alternate;
+}
+
+@keyframes floatGlow {
+    from { transform: scale(1); }
+    to { transform: scale(1.1); }
+}
+
+/* TOP BAR */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0,255,255,0.2);
+}
+
+.topbar h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: #00f5ff;
+    letter-spacing: 2px;
+}
+
+.topbar nav a {
+    margin-left: 25px;
+    color: #cfd9ff;
+    text-decoration: none;
+    position: relative;
+    transition: 0.3s;
+}
+
+.topbar nav a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -5px;
+    background: #00f5ff;
+    transition: 0.3s;
+}
+
+.topbar nav a:hover {
+    color: #00f5ff;
+}
+
+.topbar nav a:hover::after {
+    width: 100%;
+}
+
+/* HERO */
+.hero-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 80vh;
+}
+
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px;
+}
+
+.hero-text h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 4rem;
+    color: #00f5ff;
+    text-shadow: 0 0 20px rgba(0,255,255,0.6);
+}
+
+.hero-text p {
+    margin-top: 15px;
+    color: #cfd9ff;
+    font-size: 1.1rem;
+    max-width: 400px;
+}
+
+.hero-image {
+    background: url('tasoh.jpg') center/cover no-repeat;
+    filter: brightness(0.8) contrast(1.2);
+    box-shadow: inset 0 0 120px rgba(0,255,255,0.2);
+}
+
+/* INTRO BOX */
+.intro-box {
+    margin: 50px;
+    padding: 40px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(0,255,255,0.15);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0,255,255,0.08);
+}
+
+/* ABOUT PAGE */
+.page.modern {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 70px;
+    gap: 30px;
+    text-align: center;
+}
+.page.modern h1 {
+    font-family: 'Orbitron', sans-serif;
+    color: #00f5ff;
+}
+
+.page.modern img {
+    width: 320px;
+    border-radius: 20px;
+    border: 2px solid rgba(0,255,255,0.3);
+    box-shadow: 0 0 25px rgba(0,255,255,0.2);
+}
+
+/* WORK GRID */
+.work-grid {
+    text-align: center;
+    padding: 70px;
+}
+
+.work-grid h1 {
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 40px;
+    color: #00f5ff;
+}
+
+.card {
+    display: inline-block;
+    margin: 15px;
+    padding: 25px;
+    width: 220px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(0,255,255,0.2);
+    border-radius: 15px;
+    transition: 0.3s;
+    backdrop-filter: blur(15px);
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 0 25px rgba(0,255,255,0.3);
+    border-color: #00f5ff;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    background: rgba(255,255,255,0.03);
+    border-top: 1px solid rgba(0,255,255,0.15);
+    color: #8aa4ff;
+}
+
+/* FUTURISTIC GALLERY */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    max-width: 500px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 1px solid rgba(0,255,255,0.3);
+    box-shadow: 0 0 15px rgba(0,255,255,0.15);
+    transition: 0.3s;
+    filter: brightness(0.9) contrast(1.1);
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(0,255,255,0.4);
+    filter: brightness(1.1);
+}
